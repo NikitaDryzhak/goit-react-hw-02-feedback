@@ -1,28 +1,26 @@
-import './Statistics.css'
-import PropTypes from 'prop-types'
+import s from './Statistics.module.css';
+import PropTypes from 'prop-types';
 
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+  return (
+    <>
+      <p className={s.statisticString}>Good: {good}</p>
+      <p className={s.statisticString}>Neutral: {neutral}</p>
+      <p className={s.statisticString}>Bad: {bad}</p>
+      <p className={s.statisticString}>Total: {total}</p>
+      <p className={s.statisticString}>
+        Positive feedback: {positivePercentage} %
+      </p>
+    </>
+  );
+};
 
-const Statistics = ({ good, neutral, bad, total, positivePercentage}) =>
-{
-    return (
-        <>
-            <p>Good: {good}</p>
-            <p>Neutral: {neutral}</p>
-            <p>Bad: {bad}</p>
-            <p>Total: {total}</p>
-            <p>Positive feedback: {positivePercentage} %</p>
-        </>
-    )
-}
-
-
-
-export default Statistics
+export default Statistics;
 
 Statistics.propTypes = {
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-    total: PropTypes.number.isRequired,
-    positivePercentage: PropTypes.string.isRequired,
-}
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.string.isRequired,
+};
